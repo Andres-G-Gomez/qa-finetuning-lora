@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyTorch
+*.pth
+*.pt
+
+# Model files (keep small LoRA adapters, ignore large models)
+/models/
+/checkpoints/
+*.bin
+*.safetensors
+# But keep LoRA adapters (they're small)
+!/gpt2-qa-lora/
+!/gpt2-qa-lora/**
+
+# Training outputs
+/logs/
+/runs/
+/wandb/
+/tensorboard_logs/
+
+# Data (if large - you might want to keep small datasets)
+# /data/
+# Uncomment above if your data files are very large
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
