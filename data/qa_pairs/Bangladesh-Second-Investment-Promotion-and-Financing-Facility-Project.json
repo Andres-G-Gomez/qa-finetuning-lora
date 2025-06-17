@@ -1,202 +1,221 @@
 [
-    {
-        "question": "What is the World Bank project ID for IPFF II?", 
-        "answer": "P159429"
-    },
-    {
-        "question": "What is the operation short name for IPFF II?", 
-        "answer": "BD IPFF II"
-    },
-    {
-        "question": "Who is the borrower for IPFF II?", 
-        "answer": "People's Republic of Bangladesh"
-    },
-    {
-        "question": "Which institution is the implementing agency?", 
-        "answer": "Bangladesh Bank"
-    },
-    {
-        "question": "What is the Project Development Objective (PDO) of IPFF II?", 
-        "answer": "To increase long-term financing for infrastructure and to build capacity of the local financial institutions for promoting private sector-led infrastructure financing in Bangladesh"
-    },
-    {
-        "question": "What are the two core objectives of IPFF II?", 
-        "answer": "(i) increasing long-term financing for infrastructure, and (ii) building capacity of local financial institutions to mobilize such financing"
-    },
-    {
-        "question": "What was the original World Bank financing amount?", 
-        "answer": "US$356.7 million equivalent"
-    },
-    {
-        "question": "How much World Bank financing was actually disbursed?", 
-        "answer": "US$255,095,371.39"
-    },
-    {
-        "question": "How much counterpart funding did the Government of Bangladesh commit?", 
-        "answer": "US$60 million"
-    },
-    {
-        "question": "What was the currency composition of the original credit?", 
-        "answer": "Euro 94.4 million and SDR 189.7 million (US$356.7 million equivalent)"
-    },
-    {
-        "question": "What is Component 1 of IPFF II?", 
-        "answer": "Long-Term Infrastructure Financing Component (US$346.7 million)"
-    },
-    {
-        "question": "What is Component 2 of IPFF II?", 
-        "answer": "Technical Assistance Component (US$10.0 million) to support infrastructure investment capacity building"
-    },
-    {
-        "question": "What was Component 1 designed to do?", 
-        "answer": "Provide long-term funds to Participating Financial Institutions (PFIs) for further on-lending and investment in support of long-term infrastructure investments by private sector investors/companies"
-    },
-    {
-        "question": "What was the overall outcome rating for IPFF II?", 
-        "answer": "Moderately Satisfactory"
-    },
-    {
-        "question": "What was the Bank performance rating?", 
-        "answer": "Moderately Satisfactory"
-    },
-    {
-        "question": "How much private capital was mobilized under IPFF II?", 
-        "answer": "US$687.2 million"
-    },
-    {
-        "question": "What was the target for private capital mobilization?", 
-        "answer": "US$260 million"
-    },
-    {
-        "question": "How much total infrastructure investment was enabled?", 
-        "answer": "US$971.7 million"
-    },
-    {
-        "question": "What was the target for total infrastructure investment?", 
-        "answer": "US$610 million"
-    },
-    {
-        "question": "How much equity investment was generated from private sector entrepreneurs?",
-        "answer": "US$479.5 million"
-    },
-    {
-        "question": "What was the target for private equity investments?", 
-        "answer": "US$95 million"
-    },
-    {
-        "question": "What was the leverage ratio achieved?", 
-        "answer": "2.41 (private capital mobilized to total amount on-lent)" 
-    },
-    {
-        "question": "How much was actually disbursed under Component 1?", 
-        "answer": "US$284.5 million (US$253.7 million from IDA and US$30.8 million from GoB)"
-    },
-    {
-        "question": "How many jobs were supported by IPFF II?", 
-        "answer": "24,103 jobs"
-    },
-    {
-        "question": "What was the target for job creation?", 
-        "answer": "10,000 jobs"
-    },
-    {
-        "question": "How many female employees were directly employed?", 
-        "answer": "4,487 female employees (approximately 18% of total direct employment)"
-    },
-    {
-        "question": "What was the target for female beneficiaries?", 
-        "answer": "200"
-    },
-    {
-        "question": "How much did female employment exceed the target?", 
-        "answer": "Over 22 times the target (4,487 vs 200)"
-    },
-    {
-        "question": "What sectors were supported under IPFF II?", 
-        "answer": "Information and Communication Technology (ICT), Private Economic Zones, Port Development, Renewable Energy, and Solid Waste Management"
-    },
-    {
-        "question": "How many Renewable Energy subprojects were supported?", 
-        "answer": "1 subproject"
-    },
-    {
-        "question": "How many Solid Waste Management subprojects were supported?", 
-        "answer": "1 subproject"
-    },
-    {
-        "question": "What was the average loan tenure offered by IPFF II?", 
-        "answer": "14 years on average"
-    },
-    {
-        "question": "What was the market average for loan tenure before IPFF II?", 
-        "answer": "8 years"
-    },
-    {
-        "question": "What interest rate did IPFF II offer?", 
-        "answer": "6 to 8 percent"
-    },
-    {
-        "question": "What was the market interest rate?", 
-        "answer": "11 to 13 percent"
-    },
-    {
-        "question": "By how much did IPFF II reduce monthly debt-service obligations?", 
-        "answer": "48 percent compared to long-term lending offerings by banks and financial institutions in Bangladesh"
-    },
-    {
-        "question": "How much private capital was mobilized for every US$100 of IDA funds?", 
-        "answer": "Over US$270 worth of private capital"
-    }, 
-    {
-        "question": "How many PFIs remained compliant until project closing?", 
-        "answer": "18 PFIs (approximately 85 percent)"
-    },
-    {
-        "question": "What was the poverty rate below US$1.9 per day in 2016?", 
-        "answer": "12.9 percent"
-    },
-    {
-        "question": "How many people were projected to be added to the working-age population?", 
-        "answer": "21 million people in the forthcoming decade"
-    },     
-    {
-        "question": "What were the main constraints in the financial system?", 
-        "answer": "Large base of impaired assets, rising share of non-performing loans (NPLs), and constrained credit underwriting capacity"
-    },
-    {
-        "question": "How long will the solar plant supply power?", 
-        "answer": "20 years to the national grid"
-    },
-    {
-        "question": "What is the capacity of the dry dock supported?", 
-        "answer": "100,000 Deadweight Tonnage (DWT)"
-    },
-    {
-        "question": "What is the capacity of the solar plant supported?", 
-        "answer": "20 MW solar plant"
-    },
-    {
-        "question": "What is the waste recycling capacity supported?", 
-        "answer": "5,000 MT of waste PET bottles per year"
-    },
-    {
-        "question": "What was a major shortcoming in the project design?", 
-        "answer": "Non-inclusion of the Bangladesh Securities and Exchange Commission (BSEC) from the design stage"
-    },
-    {
-        "question": "What challenge did BIFFL face?", 
-        "answer": "Procurement challenges that impacted BIFFL's ability to utilize IPFF II funds to develop and offer innovative financial products"
-    },
-    {
-        "question": "How many business groups availed fixed-term BDT loans?", 
-        "answer": "Only two business groups"
-    },
-    {
-        "question": "What recommendation was made regarding tax incentives?", 
-        "answer": "The GoB should proactively offer incentives to stimulate demand and uptake of bonds and other innovative instruments, as banks do not currently enjoy tax benefits for investments in bonds"
-    },
-    {
-        "question": "How much did job creation exceed the target?", 
-        "answer": "2.41 times the target (24,103 vs 10,000)"
-    }
-]
+    {"question": "What is the project development objective (PDO) of IPFF II?", "answer": "The PDO is to increase long-term financing for infrastructure and to build capacity of the local financial institutions for promoting private sector-led infrastructure financing in Bangladesh."},
+    
+    {"question": "What was the total project financing amount at approval?", "answer": "The original amount was US$356.7 million equivalent, consisting of Euro 94.4 million and SDR 189.7 million."},
+    
+    {"question": "What was the actual disbursed amount at project completion?", "answer": "US$255.1 million was actually disbursed, including US$1.31 million under the Technical Assistance component."},
+    
+    {"question": "When was the project approved and when did it close?", "answer": "The project was approved on April 5, 2017, and closed on April 30, 2024."},
+    
+    {"question": "What is the overall outcome rating of the project?", "answer": "The overall outcome rating is Moderately Satisfactory."},
+    
+    {"question": "How many subprojects were financed under IPFF II?", "answer": "Twelve subprojects were financed across diverse infrastructure sectors."},
+    
+    {"question": "What sectors did the financed subprojects cover?", "answer": "The subprojects covered Information and Communication Technology (ICT), Private Economic Zones, Port Development, Renewable Energy, and Solid Waste Management."},
+    
+    {"question": "How much private capital was mobilized by the project?", "answer": "The project mobilized US$687.2 million of private capital, including US$479.5 million in equity investments."},
+    
+    {"question": "What was the total investment in infrastructure under IPFF II?", "answer": "The project led to US$971.7 million investment in infrastructure."},
+    
+    {"question": "How many jobs were created by the project?", "answer": "The project created 24,103 jobs, of which approximately 18 percent (4,487 jobs) were for women."},
+    
+    {"question": "What was the leverage ratio of the project?", "answer": "The leverage ratio was 2.41, defined by total private capital mobilized (US$687.2 million) to total amount on-lent (US$284.5 million)."},
+    
+    {"question": "Which institution served as the implementing agency?", "answer": "Bangladesh Bank served as the implementing agency through its Project Implementation Unit (PIU)."},
+    
+    {"question": "What were the two main components of the project?", "answer": "Component 1: Long-Term Infrastructure Financing Component (US$312.2 million revised) and Component 2: Technical Assistance Component (US$4.5 million revised)."},
+    
+    {"question": "How many restructurings did the project undergo?", "answer": "The project underwent four Level 2 restructurings processed in June 2022, March 2023, June 2023, and April 2024."},
+    
+    {"question": "What was the reason for the first restructuring?", "answer": "The first restructuring involved a no-cost extension of the closing date by 22 months to recoup initial implementation lag and compensate for COVID-19 delays."},
+    
+    {"question": "How much was cancelled in the second restructuring?", "answer": "US$100 million equivalent was cancelled from Component 1 for re-purposing to other strategic priorities."},
+    
+    {"question": "What was the average loan tenure offered under IPFF II?", "answer": "The project offered an average tenure of fourteen years compared to eight years typically offered by the market."},
+    
+    {"question": "What interest rate range was offered under IPFF II?", "answer": "The project offered interest rates of 6 to 8 percent compared to 11 to 13 percent offered by the market."},
+    
+    {"question": "How much reduction in monthly debt service payments did IPFF II achieve?", "answer": "The combined impact of longer tenure and lower interest rates reduced monthly debt-service obligations by as much as 48 percent."},
+    
+    {"question": "What was the efficiency rating of the project?", "answer": "The efficiency rating was Substantial."},
+    
+    {"question": "What was the relevance rating of the PDO?", "answer": "The relevance rating of the PDO was Substantial."},
+    
+    {"question": "What environmental and social safeguard policy was applied?", "answer": "The project applied OP 4.03 (Performance Standards for Private Sector Activities), which was one of the first applications in Bangladesh."},
+    
+    {"question": "How many Participating Financial Institutions (PFIs) were involved?", "answer": "Twenty-one financial institutions were involved as PFIs, with 18 remaining fully compliant until project closure."},
+    
+    {"question": "What was the M&E quality rating?", "answer": "The M&E quality rating was Substantial."},
+    
+    {"question": "What was the Bank performance rating?", "answer": "The Bank performance rating was Moderately Satisfactory."},
+    
+    {"question": "How many capacity building training participants were there?", "answer": "484 participants benefited from capacity building trainings, including 87 female staff members."},
+    
+    {"question": "What was the risk to development outcome rating?", "answer": "The risk to development outcome was assessed as Moderate."},
+    
+    {"question": "Which subproject was the first Hi-Tech Park in Bangladesh?", "answer": "Bangladesh Technosity Limited (BTL) was the first Hi-Tech Park in Bangladesh."},
+    
+    {"question": "What was the capacity of the dry dock established under IPFF II?", "answer": "Karnafuly Dry Dock Limited has a capacity of 100,000 Deadweight Tonnage (DWT), which is 5 times larger than existing capacity in Bangladesh."},
+    
+    {"question": "How much solar power capacity was supported?", "answer": "The project supported a 20 MW national grid-tied solar power plant."},
+    
+    {"question": "What was the recycling capacity of the solid waste management project?", "answer": "The solid waste management project has a recycling capacity of 5,000 MT of waste PET bottles per year."},
+    
+    {"question": "How many kilometers of telecommunication network were upgraded?", "answer": "The project supported upgradation of 15,887 kms of Nationwide Telecommunication Transmission Network and network capacity improvements over 1,154+ kms."},
+    
+    {"question": "What was the original closing date of the project?", "answer": "The original closing date was June 30, 2022."},
+    
+    {"question": "What was the actual closing date after extensions?", "answer": "The actual closing date was April 30, 2024."},
+    
+    {"question": "What was the borrower's counterpart funding?", "answer": "The borrower (Government of Bangladesh) provided US$60 million counterpart funding, of which US$31.4 million was actually disbursed."},
+    
+    {"question": "What was the primary challenge with ESIA preparation?", "answer": "The poor quality of Environmental and Social Impact Assessments (ESIAs) was a challenge due to the absence of accredited ESIA consultants in Bangladesh."},
+    
+    {"question": "Which organization was supposed to receive PPP support but couldn't utilize funds?", "answer": "The Public-Private Partnership Authority (PPPA) could not utilize any of their allocated US$5.0 million TA funds."},
+    
+    {"question": "What innovative financing instrument was nearly supported?", "answer": "The project came close to supporting a corporate bond issuance for long-term finance but the private sponsor withdrew at the last moment."},
+    
+    {"question": "What was the GDP growth rate of Bangladesh at the time of appraisal?", "answer": "Bangladesh was maintaining an above-average growth rate of 6.2 percent since 2010."},
+    
+    {"question": "When did Bangladesh graduate to Lower Middle-Income Country status?", "answer": "Bangladesh graduated to Lower Middle-Income Country (LMIC) status in July 2014 with a GNI per capita of US$1,220."},
+    
+    {"question": "What was the estimated cumulative investment need in Bangladesh's seventh Five Year Plan?", "answer": "The seventh Five Year Plan (2016-2020) estimated cumulative investment needs at US$410 billion, requiring 7-8 percent of GDP annually."},
+    
+    {"question": "What was the poverty rate in Bangladesh in 2016?", "answer": "The proportion of the population below the US$1.9 per day threshold stood at 12.9 percent in 2016."},
+    
+    {"question": "What was the target for private sector investment contribution?", "answer": "The country needed to mobilize investments corresponding to a minimum of 2 percent of GDP from the private sector."},
+    
+    {"question": "What was the typical maturity of commercial bank loans in Bangladesh?", "answer": "Commercial banks offered term-lending with low maturity cycles spanning only 5-6 years."},
+    
+    {"question": "What is the economic life of typical infrastructure projects?", "answer": "Infrastructure projects typically have 20-30 years of economic life."},
+    
+    {"question": "What were the key eligibility criteria for PFIs?", "answer": "PFIs had to meet 14 standard conditions including regulatory compliance, capital adequacy, NPL ratios, and environmental and social risk management capabilities."},
+    
+    {"question": "What was the utilization rate of the TA component?", "answer": "The TA component achieved 42 percent utilization, with US$1.9 million utilized out of US$4.5 million allocated."},
+    
+    {"question": "How many training events were conducted?", "answer": "Twenty-three capacity building trainings and workshops were conducted across various topics."},
+    
+    {"question": "What topics were covered in the training programs?", "answer": "Training topics included infrastructure financing, project management, PPPs, capital markets innovation, procurement, financial risk analysis, and E&S safeguards."},
+    
+    {"question": "What was the main reason for low TA absorption?", "answer": "COVID-19 pandemic and subsequent government austerity measures, including suspension of overseas training, led to low TA absorption."},
+    
+    {"question": "What was the IRR range for the subprojects?", "answer": "The Internal Rate of Return (IRR) for subprojects ranged between 9.70 percent to 23.74 percent."},
+    
+    {"question": "What was the DSCR performance of subprojects?", "answer": "The Debt Service Coverage Ratio (DSCR) for 10 out of 12 subprojects was positive and higher than 1.2 times."},
+    
+    {"question": "What was the ROA range for subprojects?", "answer": "The average Return on Assets (ROA) for subprojects ranged between 4.07 percent to 13.75 percent."},
+    
+    {"question": "What was the ROE range for subprojects?", "answer": "The average Return on Equity (ROE) ranged between 8.43 percent to 46.74 percent."},
+    
+    {"question": "How did IPFF II performance compare to its predecessor?", "answer": "IPFF II mobilized 8 percent higher investment in infrastructure compared to the predecessor IPFF project (US$270 vs US$250 for every US$100)."},
+    
+    {"question": "What was the stance of WBG that affected some subprojects?", "answer": "WBG's policy change in 2018 on financing coal-fired power plants disqualified some HFO and diesel-based power plants from the pipeline."},
+    
+    {"question": "What was the target for female beneficiaries?", "answer": "The target was 200 female beneficiaries, and the project achieved 4,487 female employees directly employed."},
+    
+    {"question": "What was the citizen satisfaction rate with infrastructure subprojects?", "answer": "The affected citizens' satisfaction rate was 51.8 percent based on surveys of 3 out of 12 subprojects."},
+    
+    {"question": "How many economic zones were supported?", "answer": "Five private economic zones were supported, with four operational and one under development."},
+    
+    {"question": "How many people are employed in the supported economic zones?", "answer": "19,730 employees are working in the supported economic zones."},
+    
+    {"question": "What was the capacity of the data center established?", "answer": "Felicity IDC Limited established a TIER-III data center with 500 racks capacity."},
+    
+    {"question": "How many ISP clients do the telecommunications companies serve?", "answer": "Summit Communications Limited has 612 ISP clients and Fiber@Home Limited has 350 ISP clients."},
+    
+    {"question": "What was the carbon emission savings expected from the solar project?", "answer": "The 20 MW solar power plant is expected to achieve carbon emission savings of approximately 400,000 tons over 20 years."},
+    
+    {"question": "What was the reason for the split rating methodology?", "answer": "A split rating was applied due to the partial cancellation and downward revision of targets during the June 2023 restructuring."},
+    
+    {"question": "What percentage of disbursement occurred before June 21, 2023?", "answer": "56 percent of disbursements (US$142.2 million) occurred before June 21, 2023."},
+    
+    {"question": "What percentage of disbursement occurred after June 21, 2023?", "answer": "44 percent of disbursements (US$111.5 million) occurred after June 21, 2023."},
+    
+    {"question": "What was the World Bank's Country Partnership Framework period for Bangladesh?", "answer": "The Country Partnership Framework (CPF) for Bangladesh was for FY23-27."},
+    
+    {"question": "What are Bangladesh's graduation targets?", "answer": "Bangladesh aims to graduate from LDC status by 2026 and achieve UMIC status by 2031."},
+    
+    {"question": "What was the eighth Five Year Plan's target for domestic private investment?", "answer": "The eighth Five Year Plan targeted increasing domestic private investment share from 70 percent to 75 percent of total investments."},
+    
+    {"question": "What was the FDI target as percentage of GDP?", "answer": "The target was to increase Foreign Direct Investment (FDI) from 1 percent to 3 percent of GDP."},
+    
+    {"question": "What was the interest rate cap introduced in Bangladesh?", "answer": "A lending rate cap of 9 percent was introduced in April 2020 to boost private sector growth."},
+    
+    {"question": "What reforms are being introduced by the new interim government?", "answer": "The new interim government is introducing reforms to address banking sector asset quality and governance issues, including strengthening asset classification and preparing bank resolution legislation."},
+    
+    {"question": "What was the fiscal year definition for the project?", "answer": "The fiscal year was defined as July 1 to June 30."},
+    
+    {"question": "Who was the Task Team Leader at approval?", "answer": "A.K.M. Abdullah was the ADM Responsible Team Leader at approval."},
+    
+    {"question": "Who was the Task Team Leader at ICR?", "answer": "Suhail Kassim was the Task Team Leader at ICR."},
+    
+    {"question": "What was the mid-term review rating?", "answer": "The mid-term review rated the project as Moderately Satisfactory (MS)."},
+    
+    {"question": "What was the main procurement challenge?", "answer": "The main procurement challenge was delays in approvals and no-objections, which affected decision-making ability of PFIs and impacted the overall project timeline."},
+    
+    {"question": "What was the role of Bangladesh Securities and Exchange Commission?", "answer": "BSEC was not directly included in the project design but plays a critical regulatory role for capital markets instruments. This was identified as a missing element in the project design."},
+    
+    {"question": "What was the impact on term loans to industries?", "answer": "Term loans to industries grew at a CAGR of 14.5 percent, increasing from US$11 billion in June 2017 to US$28.5 billion in June 2024."},
+    
+    {"question": "What was the average tenure for long-term loans in the market?", "answer": "The average tenure for long-term loans offered by the financial sector in Bangladesh increased from eight years to ten years during the project period."},
+    
+    {"question": "What was the weighted average interest rate for industrial term financing?", "answer": "As of September 30, 2024, the weighted average interest rate for industrial term financing was 12.43 percent."},
+    
+    {"question": "How many companies are operational in Bangladesh Technosity Limited?", "answer": "Thirteen companies have started operations in the premises of BTL, employing 1,208 people including 176 female employees."},
+    
+    {"question": "What is the total area of Meghna Industrial Economic Zone?", "answer": "Meghna Industrial Economic Zone covers 110 acres of land in Sonargaon, Narayanganj."},
+    
+    {"question": "How many foreign companies operate in Meghna Industrial Economic Zone?", "answer": "Ten out of twenty-one companies operating in MIEZ are foreign companies."},
+    
+    {"question": "What licenses does Summit Communications Limited hold?", "answer": "SCL holds licenses for NTTN, International Terrestrial Cable (ITC), International Internet Gateway (IIG), Interconnection Exchange (ICX), and National Internet Exchange (NIX)."},
+    
+    {"question": "What is the network coverage of Summit Communications Limited?", "answer": "SCL manages over 47,000+ km of network while serving 12,000 links and 4,774 TELCO BTS."},
+    
+    {"question": "When did Karnafuly Dry Dock receive permission from Chittagong Port Authority?", "answer": "Karnafuly Dry Dock Limited received permission from Chittagong Port Authority on December 19, 2013."},
+    
+    {"question": "What is the construction progress of Karnafuly Dry Dock?", "answer": "The overall construction progress is 76.77 percent as of April 2024, with completion expected by December 2024."},
+    
+    {"question": "What type of plastic waste does Raw Tech Limited recycle?", "answer": "Raw Tech Limited recycles post-consumer Polyethylene Terephthalate (PET) bottles into recycled polyester staple fiber (rPSF)."},
+    
+    {"question": "When did Raw Tech Limited commence operations?", "answer": "Raw Tech Limited started construction in May 2019 and commenced operations in October 2022."},
+    
+    {"question": "When did Technaf SolarTech Energy Limited start providing electricity?", "answer": "TSEL started providing electricity to the national grid from September 13, 2018."},
+    
+    {"question": "What was the purpose of TSEL's IPFF II loan?", "answer": "TSEL used the IPFF II facility loan to pay off prevailing high-cost borrowings from financial institutions."},
+    
+    {"question": "What is the total area of City Economic Zone?", "answer": "City Economic Zone covers 78 acres of land in Rupshi, Rupganj, Narayanganj."},
+    
+    {"question": "When did City Economic Zone start commercial operations?", "answer": "City Economic Zone started commercial operations on September 3, 2018."},
+    
+    {"question": "What is the fiber-path coverage of Fiber@Home Limited?", "answer": "Fiber@Home Limited has an extensive fiber-path of 48,500 kilometers covering all major cities and districts."},
+    
+    {"question": "How many central offices does Fiber@Home Limited have?", "answer": "F@H has established 161 central offices, 252 backbone interfaces, and 37 co-location centers."},
+    
+    {"question": "What is the total area of Bay Economic Zone?", "answer": "Bay Economic Zone is being developed over approximately 37.59 acres of land in Dewaliabari, Konabari, Gazipur."},
+    
+    {"question": "What is the development progress of Bay Economic Zone?", "answer": "The overall development progress of Bay Economic Zone is 82 percent, with completion expected by December 2024."},
+    
+    {"question": "What is the total area of Hoshendi Economic Zone?", "answer": "Hoshendi Economic Zone is being developed over approximately 108.057 acres of land in Char Betaki, Hoshendi, Gazaria, Munshiganj."},
+    
+    {"question": "What is the construction progress of Hoshendi Economic Zone?", "answer": "95 percent of the construction work has been completed, with the rest expected to be completed by December 2024."},
+    
+    {"question": "What is the total area of Comilla Economic Zone?", "answer": "Comilla Economic Zone covers 246.3615 acres of land, with an additional 113.78 acres acquired for expansion."},
+    
+    {"question": "When was Comilla Economic Zone's Commercial Operation Date declared?", "answer": "Comilla Economic Zone's Commercial Operation Date (COD) was declared as December 31, 2023."},
+    
+    {"question": "What is the capacity of Felicity IDC Limited data center?", "answer": "Felicity IDC Limited has a capacity of 500 racks, with 250 racks operational from January 30, 2024, and another 250 to be completed by December 2024."},
+    
+    {"question": "What services does Felicity IDC provide?", "answer": "Felicity IDC provides 24-hour physical security, network and IT support, and environmental control for data storage and equipment support."},
+    
+    {"question": "What was the total staff time cost for project preparation?", "answer": "The total staff time cost for preparation was US$329,152.55 across 56.60 staff weeks."},
+    
+    {"question": "What was the total staff time cost for supervision?", "answer": "The total staff time cost for supervision was US$1,240,758.29 across 226.80 staff weeks."},
+    
+    {"question": "What is the significance of the demonstration effect?", "answer": "The project demonstrated that long-term finance can de-risk infrastructure subprojects through stability and predictability, leveraging substantial equity capital and instilling confidence among financiers."},
+    
+    {"question": "What was the key lesson about institutional coordination?", "answer": "Lack of coordination between implementing agencies was a key issue, particularly the GoB's failure to ensure timely institutional engagement by PPPA and effective TA absorption by BIFFL."},
+    
+    {"question": "What was the main environmental and social innovation?", "answer": "IPFF II was one of the first World Bank projects in Bangladesh to adopt OP 4.03 (Performance Standards for Private Sector Activities), introducing international E&S standards."},
+    
+    {"question": "What was the overall assessment of the project's contribution to Bangladesh's development?", "answer": "The project substantially contributed to infrastructure development, job creation, private capital mobilization, and capacity building, while demonstrating the viability of long-term infrastructure financing in Bangladesh."}
+  ]

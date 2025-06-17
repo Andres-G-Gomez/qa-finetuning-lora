@@ -1,113 +1,57 @@
-import json
+"""
+Main training script for QA fine-tuning with QLoRA.
+"""
+
 import os
-import glob
+import sys
+import yaml
+import torch
 from pathlib import Path
 
-def prompt_gpt2(prompt, model, tokenizer, max_tokens=50):
-    # Move inputs to the same device as the model
-    inputs = tokenizer(prompt, return_tensors="pt")
-    if hasattr(model, 'device'):
-        inputs = {k: v.to(model.device) for k, v in inputs.items()}
-    
-    with torch.no_grad():  # Add this for inference
-        outputs = model.generate(**inputs, max_new_tokens=max_tokens, do_sample=True, temperature=0.7)
-    
-    print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+# Add src to path for imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-def load_qa_data(data_dir):
-    """Load QA pairs from all JSON files in the specified directory."""
-    qa_texts = []
-    data_path = Path(data_dir)
-    
-    # Find all JSON files in the directory
-    json_files = list(data_path.glob("*.json"))
-    
-    if not json_files:
-        raise FileNotFoundError(f"No JSON files found in {data_dir}")
-    
-    print(f"Found {len(json_files)} JSON files to load")
-    
-    for json_file in json_files:
-        print(f"Loading {json_file}")
-        try:
-            with open(json_file, 'r', encoding='utf-8') as f:
-                qa_pairs = json.load(f)
-            
-            # Convert QA pairs to training text format
-            for qa in qa_pairs:
-                # Format as Q: ... A: ... for clear structure
-                formatted_text = f"Q: {qa['question']}\nA: {qa['answer']}"
-                qa_texts.append(formatted_text)
-                
-        except Exception as e:
-            print(f"Error loading {json_file}: {e}")
-            continue
-    
-    print(f"Loaded {len(qa_texts)} QA pairs total")
-    return qa_texts
+from transformers import (
+    AutoTokenizer, 
+    AutoModelForCausalLM, 
+    Trainer, 
+    TrainingArguments, 
+    DataCollatorForLanguageModeling,
+    BitsAndBytesConfig
+)
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
-if __name__ == "__main__":
-    import torch
-    from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments, DataCollatorForLanguageModeling
-    from datasets import Dataset
-    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-    from transformers import BitsAndBytesConfig
+from data_loader import load_qa_data, create_dataset, tokenize_dataset
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"Using device: {device}")
 
-    # 1. Load QA dataset from files
-    qa_data_dir = "./data/qa_pairs/"
-    try:
-        qa_texts = load_qa_data(qa_data_dir)
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
-        print("Please ensure the QA data files are in the correct location.")
-        exit(1)
+def load_config(config_path: str = "../configs/training_config.yaml") -> dict:
+    """Load training configuration from YAML file."""
+    config_file = Path(__file__).parent / config_path
     
-    # Create dataset from QA pairs
-    data = {"text": qa_texts}
-    dataset = Dataset.from_dict(data)
+    with open(config_file, 'r') as f:
+        config = yaml.safe_load(f)
     
-    # Split dataset (80% train, 20% test)
-    dataset = dataset.train_test_split(test_size=0.2, seed=42)
-    print(f"Training samples: {len(dataset['train'])}")
-    print(f"Test samples: {len(dataset['test'])}")
+    return config
 
-    # 2. Load tokenizer
-    model_id = "gpt2"
+
+def setup_model_and_tokenizer(config: dict, device: str):
+    """Setup model, tokenizer, and LoRA configuration."""
+    model_id = config['model']['model_id']
+    
+    # Load tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_id)
-    tokenizer.pad_token = tokenizer.eos_token  # GPT2 has no pad token
-    tokenizer.padding_side = "left"  # Important for generation
-
-    # 3. Tokenize dataset with longer max_length for QA pairs
-    def tokenize(example):
-        # Use longer max_length to accommodate QA pairs
-        tokens = tokenizer(
-            example["text"], 
-            padding="max_length", 
-            truncation=True, 
-            max_length=256  # Increased from 64 to handle longer QA content
-        )
-        # Add labels for causal language modeling
-        tokens["labels"] = tokens["input_ids"].copy()
-        return tokens
-
-    tokenized = dataset.map(tokenize, batched=True)
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.padding_side = "left"
     
-    # Remove the original text column to avoid conflicts
-    tokenized = tokenized.remove_columns(["text"])
-
-    # 4. Quantization config for QLoRA (only use if CUDA available)
+    # Setup quantization config for CUDA
     if device == "cuda":
         bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_use_double_quant=True,
-            bnb_4bit_quant_type="nf4",
+            load_in_4bit=config['quantization']['load_in_4bit'],
+            bnb_4bit_use_double_quant=config['quantization']['bnb_4bit_use_double_quant'],
+            bnb_4bit_quant_type=config['quantization']['bnb_4bit_quant_type'],
             bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
         )
         
-        # 5. Load quantized model and prepare for QLoRA
         model = AutoModelForCausalLM.from_pretrained(
             model_id,
             quantization_config=bnb_config,
@@ -116,87 +60,118 @@ if __name__ == "__main__":
         )
         model = prepare_model_for_kbit_training(model)
     else:
-        # For CPU, load model normally
         print("CUDA not available, loading model on CPU without quantization")
         model = AutoModelForCausalLM.from_pretrained(model_id)
         model = model.to(device)
-
-    # 6. LoRA configuration
+    
+    # Setup LoRA
     lora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
-        target_modules=["c_attn", "c_proj"],  # Include both attention modules
-        lora_dropout=0.05,
-        bias="none",
-        task_type="CAUSAL_LM"
+        r=config['lora']['r'],
+        lora_alpha=config['lora']['lora_alpha'],
+        target_modules=config['lora']['target_modules'],
+        lora_dropout=config['lora']['lora_dropout'],
+        bias=config['lora']['bias'],
+        task_type=config['lora']['task_type']
     )
-
+    
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
+    
+    return model, tokenizer
 
-    # 7. Training setup - adjusted for QA fine-tuning
-    training_args = TrainingArguments(
-        output_dir="./gpt2-qa-lora",
-        per_device_train_batch_size=2,  # Reduced batch size due to longer sequences
-        per_device_eval_batch_size=2,
-        num_train_epochs=100,  # More epochs for better QA learning
-        learning_rate=1e-4,  # Slightly higher learning rate
-        logging_steps=10,
-        save_steps=50,
-        eval_strategy="epoch",
-        save_strategy="epoch",
-        logging_dir="./logs",
+
+def setup_training_args(config: dict, device: str) -> TrainingArguments:
+    """Setup training arguments from config."""
+    training_config = config['training']
+    
+    return TrainingArguments(
+        output_dir=training_config['output_dir'],
+        per_device_train_batch_size=training_config['per_device_train_batch_size'],
+        per_device_eval_batch_size=training_config['per_device_eval_batch_size'],
+        num_train_epochs=training_config['num_train_epochs'],
+        learning_rate=training_config['learning_rate'],
+        logging_steps=training_config['logging_steps'],
+        save_steps=training_config['save_steps'],
+        eval_strategy=training_config['eval_strategy'],
+        save_strategy=training_config['save_strategy'],
+        logging_dir=training_config['logging_dir'],
         fp16=device == "cuda",
         bf16=False,
-        remove_unused_columns=True,
-        report_to="none",
-        dataloader_pin_memory=False,
-        gradient_checkpointing=True,
-        warmup_steps=50,  # Add warmup for stability
-        weight_decay=0.01,  # Add regularization
+        remove_unused_columns=training_config['remove_unused_columns'],
+        report_to=training_config['report_to'],
+        dataloader_pin_memory=training_config['dataloader_pin_memory'],
+        gradient_checkpointing=training_config['gradient_checkpointing'],
+        warmup_steps=training_config['warmup_steps'],
+        weight_decay=training_config['weight_decay'],
+        save_total_limit=training_config['save_total_limit'],
+        load_best_model_at_end=training_config['load_best_model_at_end'],
+        metric_for_best_model=training_config['metric_for_best_model'],
+        greater_is_better=training_config['greater_is_better'],
     )
 
-    # 8. Data collator
+
+def main():
+    """Main training function."""
+    # Load configuration
+    config = load_config()
+    
+    # Setup device
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Using device: {device}")
+    
+    # Load and prepare data
+    print("Loading QA data...")
+    qa_texts = load_qa_data(config['data']['data_dir'])
+    dataset = create_dataset(
+        qa_texts, 
+        test_size=config['data']['test_size'], 
+        seed=config['data']['seed']
+    )
+    
+    # Setup model and tokenizer
+    print("Setting up model and tokenizer...")
+    model, tokenizer = setup_model_and_tokenizer(config, device)
+    
+    # Tokenize dataset
+    print("Tokenizing dataset...")
+    tokenized_dataset = tokenize_dataset(
+        dataset, 
+        tokenizer, 
+        max_length=config['model']['max_length']
+    )
+    
+    # Setup training arguments
+    training_args = setup_training_args(config, device)
+    
+    # Setup data collator
     data_collator = DataCollatorForLanguageModeling(
-        tokenizer=tokenizer, 
-        mlm=False,
-        pad_to_multiple_of=8 if device == "cuda" else None
+        tokenizer=tokenizer,
+        mlm=config['data_collator']['mlm'],
+        pad_to_multiple_of=config['data_collator']['pad_to_multiple_of'] if device == "cuda" else None
     )
-
-    # 9. Trainer setup
+    
+    # Setup trainer
     trainer = Trainer(
         model=model,
         args=training_args,
-        train_dataset=tokenized["train"],
-        eval_dataset=tokenized["test"],
+        train_dataset=tokenized_dataset["train"],
+        eval_dataset=tokenized_dataset["test"],
         processing_class=tokenizer,
         data_collator=data_collator,
     )
-
-    # 10. Train
+    
+    # Train
     print("Starting QA fine-tuning...")
     trainer.train()
-
-    # 11. Save model
-    print("Saving fine-tuned model...")
-    model.save_pretrained("./gpt2-qa-lora")
-    tokenizer.save_pretrained("./gpt2-qa-lora")
-
-    # 12. Test the trained model with QA format
-    print("\nTesting the fine-tuned QA model:")
-    model.eval()
     
-    # Test with QA format prompts
-    test_questions = [
-        "Q: What is the main purpose of health sector support projects?",
-        "Q: Which regions typically benefit from health interventions?",
-        "Q: What are the key components of health system strengthening?"
-    ]
+    # Save model
+    print("Saving LoRA adapters...")
+    model.save_pretrained(config['training']['output_dir'])
+    tokenizer.save_pretrained(config['training']['output_dir'])
     
-    for question in test_questions:
-        print(f"\n{question}")
-        print("Generated answer:")
-        prompt_gpt2(question + "\nA:", model, tokenizer, max_tokens=100)
-        print("-" * 50)
-    
+    print("LoRA adapters saved!")
     print("QA fine-tuning completed successfully!")
+
+
+if __name__ == "__main__":
+    main()
